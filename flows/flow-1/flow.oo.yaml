@@ -1,0 +1,81 @@
+nodes:
+  - node_id: data-cleaner#1
+    task: self::data-cleaner
+    inputs_from:
+      - handle: exportFormat
+        value: json
+      - handle: removeEmptyColumns
+        value: true
+      - handle: removeDuplicates
+        value: true
+      - handle: removeEmptyRows
+        value: true
+      - handle: trimWhitespace
+        value: true
+      - handle: file
+        from_node:
+          - node_id: +typescript#1
+            output_handle: excel
+      - handle: outputDir
+        value: /oomol-driver/oomol-storage
+      - handle: checkValidate
+        value: true
+  - node_id: +typescript#1
+    title: "mock"
+    icon: ":skill-icons:typescript:"
+    task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: outputDir
+          json_schema:
+            type: string
+            ui:widget: dir
+      outputs_def:
+        - handle: excel
+          json_schema:
+            type: string
+        - handle: csv
+          json_schema:
+            type: string
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+scriptlet#1.ts
+    inputs_from:
+      - handle: outputDir
+        value: /oomol-driver/oomol-storage
+  - node_id: +python#2
+    title: "CSV preview"
+    icon: ":logos:python:"
+    task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: file
+          json_schema:
+            type: string
+      outputs_def:
+        []
+      executor:
+        name: python
+        options:
+          entry: scriptlets/+scriptlet#2.py
+    inputs_from:
+      - handle: file
+        from_node:
+          []
+  - node_id: excel_preview#1
+    task: self::excel_preview
+    inputs_from:
+      - handle: file
+        from_node:
+          []
+  - node_id: json_file_preview#1
+    title: "JSON file preview #1"
+    inputs_from:
+      - handle: jsonPath
+        from_node:
+          - node_id: data-cleaner#1
+            output_handle: file
+    task: oomol-preview::json_file_preview

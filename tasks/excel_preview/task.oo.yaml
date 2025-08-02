@@ -1,0 +1,59 @@
+ui:
+  default_width: 450
+inputs_def:
+  - handle: file
+    json_schema:
+      type: string
+outputs_def:
+  - handle: file_path
+    json_schema: &a1
+      type: string
+  - handle: file_size_mb
+    json_schema: *a1
+  - handle: file_type
+    json_schema: *a1
+  - handle: file_extension
+    json_schema: *a1
+  - handle: engine_used
+    json_schema: *a1
+  - handle: total_sheets
+    json_schema:
+      type: array
+  - handle: sheet_names
+    json_schema:
+      type: array
+  - handle: current_sheet
+    json_schema: *a1
+  - handle: total_rows
+    json_schema:
+      type: array
+  - handle: total_columns
+    json_schema:
+      type: array
+  - handle: column_names
+    json_schema:
+      type: array
+  - handle: missing_values
+    json_schema:
+      type: array
+  - handle: preview_rows
+    json_schema:
+      type: array
+  - handle: data_types
+    json_schema:
+      type: array
+  - handle: has_duplicate_columns
+    json_schema: &a2
+      type: boolean
+  - handle: has_empty_columns
+    json_schema: *a2
+  - handle: datetime_columns
+    json_schema:
+      type: array
+executor:
+  name: python
+  options:
+    entry: __init__.py
+    spawn: false
+title: Excel preview
+icon: ":simple-icons:microsoftexcel:"

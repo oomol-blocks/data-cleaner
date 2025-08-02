@@ -1,0 +1,15 @@
+version: 0.0.1
+scripts:
+  # Script executed when the container is first loaded
+  # eg: bootstrap: poetry add pandas
+  bootstrap: |
+    npm install
+    poetry install --no-root
+dependencies:
+  oomol-preview: 0.1.0
+name: data-cleaner
+repository: https://github.com/oomol-blocks/data-cleaner
+releaseNotes: support excel csv data cleaning
+displayName: Data Cleaner
+description: 一个基于 OOMOL 工作流的智能数据清理工具，支持多种数据格式的自动化清理和验证，让您的数据处理工作更加高效可靠。
+icon: ./icon.png

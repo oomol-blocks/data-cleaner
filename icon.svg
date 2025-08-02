@@ -1,0 +1,31 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景圆形 -->
+  <circle cx="50" cy="50" r="45" fill="#3B82F6"/>
+  
+  <!-- 数据表格 -->
+  <rect x="25" y="30" width="50" height="35" rx="3" fill="#FFFFFF"/>
+  
+  <!-- 表格线条 -->
+  <g stroke="#E5E7EB" stroke-width="1">
+    <!-- 水平线 -->
+    <line x1="25" y1="40" x2="75" y2="40"/>
+    <line x1="25" y1="50" x2="75" y2="50"/>
+    <line x1="25" y1="55" x2="75" y2="55"/>
+    
+    <!-- 垂直线 -->
+    <line x1="40" y1="30" x2="40" y2="65"/>
+    <line x1="60" y1="30" x2="60" y2="65"/>
+  </g>
+  
+  <!-- 清理工具（简化的扫帚） -->
+  <g transform="translate(65, 20)">
+    <line x1="0" y1="0" x2="15" y2="15" stroke="#FBBF24" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="2" cy="2" r="3" fill="#FBBF24"/>
+  </g>
+  
+  <!-- 清理完成的勾号 -->
+  <g transform="translate(50, 75)">
+    <circle cx="0" cy="0" r="8" fill="#10B981"/>
+    <path d="M -3 0 L -1 2 L 3 -3" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

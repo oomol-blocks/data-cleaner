@@ -1,0 +1,59 @@
+ui:
+  default_width: 450
+inputs_def:
+  - handle: file
+    json_schema:
+      type: string
+      ui:widget: file
+  - handle: exportFormat
+    json_schema:
+      enum:
+        - excel
+        - csv
+        - json
+      ui:options:
+        labels:
+          - Excel
+          - CSV
+          - JSON
+  - handle: outputDir
+    json_schema:
+      type: string
+      ui:widget: dir
+  - group: Group
+  - handle: removeDuplicates
+    json_schema:
+      type: boolean
+    value: true
+  - handle: removeEmptyRows
+    json_schema:
+      type: boolean
+    value: true
+  - handle: removeEmptyColumns
+    json_schema:
+      type: boolean
+    value: true
+  - handle: trimWhitespace
+    json_schema:
+      type: boolean
+    value: true
+  - handle: checkValidate
+    json_schema:
+      type: boolean
+    value: false
+outputs_def:
+  - handle: file
+    json_schema:
+      type: string
+  - handle: validationIssues
+    json_schema:
+      type: array
+      items:
+        type: object
+        additionalProperties: false
+executor:
+  name: nodejs
+  options:
+    entry: main.ts
+    spawn: false
+icon: ":skill-icons:typescript:"

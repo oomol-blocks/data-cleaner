@@ -1,0 +1,71 @@
+{
+  "nodes": {
+    "data-cleaner#1": {
+      "contentWidth": 558.191650390625,
+      "rfNode": {
+        "position": {
+          "x": 346,
+          "y": 115.00130462646484
+        }
+      }
+    },
+    "+typescript#1": {
+      "contentWidth": 490.7562338762516,
+      "rfNode": {
+        "position": {
+          "x": -343.96121884530453,
+          "y": 115.00130462646484
+        }
+      },
+      "sections": {
+        "scriptlet": {
+          "cardCollapsed": true
+        }
+      }
+    },
+    "+python#2": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 1109.1926635855175,
+          "y": -323.3464137893067
+        }
+      },
+      "sections": {
+        "scriptlet": {
+          "cardCollapsed": true
+        },
+        "preview": {
+          "_:oo-preview:_": {
+            "cardCollapsed": true
+          }
+        }
+      }
+    },
+    "excel_preview#1": {
+      "contentWidth": 540.1955348886075,
+      "rfNode": {
+        "position": {
+          "x": 1109.1926635855175,
+          "y": 498.9470963647438
+        }
+      }
+    },
+    "json_file_preview#1": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 1109.1926635855175,
+          "y": 141.29757740622986
+        }
+      },
+      "sections": {
+        "preview": {
+          "_:oo-preview:_": {
+            "cardCollapsed": true
+          }
+        }
+      }
+    }
+  }
+}
